@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가계부</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>나의 가계부</h1>
+        
+        <form id="expenseForm">
+            <input type="datetime-local" id="date" required value="">
+            <input type="text" id="description" placeholder="내용" required>
+            <input type="number" id="amount" placeholder="금액" required>
+            <select id="type" required>
+                <option value="expense">지출</option>
+                <option value="income">수입</option>
+            </select>
+            <button type="submit">추가</button>
+        </form>
+
+        <div class="summary">
+            <p>총 수입: <span id="totalIncome">0</span>원</p>
+            <p>총 지출: <span id="totalExpense">0</span>원</p>
+            <p>잔액: <span id="balance">0</span>원</p>
+        </div>
+
+        <table id="expenseTable">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>내용</th>
+                    <th>금액</th>
+                    <th>구분</th>
+                    <th>작업</th>
+                </tr>
+            </thead>
+            <tbody id="expenseList"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
